@@ -4,7 +4,7 @@ This project is designed to forecast energy consumption using machine learning m
 
 ## Project Structure
 
-.
+
 ├── Dockerfile
 ├── README.md
 ├── requirements.txt
@@ -29,31 +29,32 @@ Before you begin, ensure you have Docker installed on your system. You can downl
 ## Installation
 
 
-1. **Build the Docker image:**
+**Build the Docker image:**
 
 Run the following command in the terminal to build the Docker image:
 
-```bash
-docker build -t energy-forecasting-image .
-```
+  ```bash
+  docker build -t energy-forecasting-image .
+  ```
 
 ## Usage
 
-2. **Running the Docker container:**
+**Running the Docker container:**
 
-     After building the Docker image, run the following command to start the container and execute the Python script:
+After building the Docker image, run the following command to start the container and execute the Python script:
 
-     ```bash
+  ```bash
   docker run -v .:/app -p 8001:8001 energy-forecasting-image
-      ```
+  ```
 
   This command will:
 
   Load the dataset. 
 
-  Forecast energy consumption using the trained      models.
+  Forecast energy consumption using the trained models.
 
   Display the results including plots and evaluation metrics.
+
 
 ## Endpoints
 
@@ -84,6 +85,7 @@ This endpoint allows you to upload a CSV file containing energy consumption data
 - **Example Request:**
   ```bash
   curl -X POST "http://localhost:8001/train/" -F "file=@path_to_your_file/energy_consumption_data.csv"
+  ```
 
 ### 2. `/forecast/` [POST]
 This endpoint allows you to forecast future energy consumption based on the last trained models.
